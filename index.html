@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>GROUP PORTFOLIO</title>
+  </head>
+  <body>
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <div>
+          <a href="#" class="nav__logo">Ledetrosi</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#work" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="form/form.html" class="nav__link">Hire Us</a>
+            </li>
+            <li class="nav__item">
+              <button id="changeTextButton" class="nav__link">
+                Change Text
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+
+      <div class="hero-section">
+        <h1 class="hero-heading" id="heroHeading">
+          <span class="highlight highlight-secondary"
+            >Hi, we are Leone Dennie Troplly Siphesihle</span
+          >
+          <br class="hero-heading-break" />
+          Creative fullstack web developers📱
+        </h1>
+        <p class="hero-paragraph">
+          The ultimate bullet journal app to document, reflect, and embrace your
+          personal journey
+        </p>
+        <div class="image-gallery">
+          <img
+            src="Images/undraw_code-review_ept3.svg"
+            alt="Image 1"
+            class="gallery-image active"
+            data-index="0"
+          />
+          <img
+            src="Images/undraw_engineering-team_13ax (1).svg"
+            alt="Image 2"
+            class="gallery-image"
+            data-index="1"
+          />
+          <img
+            src="Images/undraw_mobile-site_qjby.svg"
+            alt="Image 3"
+            class="gallery-image"
+            data-index="2"
+          />
+          <button id="prevBtn" class="gallery-control">Previous</button>
+          <button id="nextBtn" class="gallery-control">Next</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="about section">
+        <h2 class="section-title">About Us</h2>
+        <p class="about-text" id="aboutText">
+          We are a group of passionate developers who love creating beautiful
+          and functional web applications. Our goal is to provide the best user
+          experience possible while delivering high-quality code.
+        </p>
+      </section>
+
+      <section id="skills" class="skills section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container bd-grid">
+          <div>
+            <h3 class="skills__subtitle">Frontend</h3>
+            <div class="skills__data">
+              <span class="skills__name">HTML</span>
+              <span class="skills__percentage">95%</span>
+              <div class="skills__bar skills__html"></div>
+            </div>
+            <div class="skills__data">
+              <span class="skills__name">CSS</span>
+              <span class="skills__percentage">85%</span>
+              <div class="skills__bar skills__css"></div>
+            </div>
+            <div class="skills__data">
+              <span class="skills__name">JavaScript</span>
+              <span class="skills__percentage">70%</span>
+              <div class="skills__bar skills__js"></div>
+            </div>
+            <div class="skills__data">
+              <span class="skills__name">React</span>
+              <span class="skills__percentage">60%</span>
+              <div class="skills__bar skills__react"></div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="skills__subtitle">Backend</h3>
+            <div class="skills__data">
+              <span class="skills__name">Node.js</span>
+              <span class="skills__percentage">75%</span>
+              <div class="skills__bar skills__node"></div>
+            </div>
+            <div class="skills__data">
+              <span class="skills__name">Python</span>
+              <span class="skills__percentage">65%</span>
+              <div class="skills__bar skills__python"></div>
+            </div>
+            <div class="skills__data">
+              <span class="skills__name">SQL</span>
+              <span class="skills__percentage">80%</span>
+              <div class="skills__bar skills__sql"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="work-section">
+        <h2 class="section-title">Our Work</h2>
+        <div class="work-grid-container" id="workGrid">
+          <div
+            class="work-item hover-effect"
+            data-hover-text="View Project One Details"
+          >
+            <a
+              href="link-to-project1.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/project1-placeholder.jpg"
+                alt="Project 1 Placeholder"
+                class="work-image"
+              />
+              <h3 class="work-heading">Project One Title</h3>
+              <p class="work-description">Short description of project one.</p>
+            </a>
+          </div>
+          <div
+            class="work-item hover-effect"
+            data-hover-text="Explore Project Two"
+          >
+            <a
+              href="link-to-project2.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/project2-placeholder.jpg"
+                alt="Project 2 Placeholder"
+                class="work-image"
+              />
+              <h3 class="work-heading">Project Two Title</h3>
+              <p class="work-description">Brief explanation of project two.</p>
+            </a>
+          </div>
+          <div
+            class="work-item hover-effect"
+            data-hover-text="See Project Three Live"
+          >
+            <a
+              href="link-to-project3.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/project3-placeholder.jpg"
+                alt="Project 3 Placeholder"
+                class="work-image"
+              />
+              <h3 class="work-heading">Project Three Title</h3>
+              <p class="work-description">Summary of project three.</p>
+            </a>
+          </div>
+          <div
+            class="work-item hover-effect"
+            data-hover-text="Learn More About Project Four"
+          >
+            <a
+              href="link-to-project4.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/project4-placeholder.jpg"
+                alt="Project 4 Placeholder"
+                class="work-image"
+              />
+              <h3 class="work-heading">Project Four Title</h3>
+              <p class="work-description">Details about project four.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact__container bd-grid">
+          <form action="#" class="contact__form" id="contactForm">
+            <div class="contact__inputs">
+              <input
+                type="text"
+                placeholder="Name"
+                class="contact__input"
+                id="nameInput"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="contact__input"
+                id="emailInput"
+                required
+              />
+            </div>
+
+            <textarea
+              placeholder="Message"
+              class="contact__input contact__input-textarea"
+              id="messageInput"
+              required
+            ></textarea>
+
+            <button type="submit" class="contact__button">Send Message</button>
+            <p id="formFeedback" class="form-feedback"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Ledetrosi. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

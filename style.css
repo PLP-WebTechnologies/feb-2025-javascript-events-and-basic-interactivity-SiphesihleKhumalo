@@ -1,0 +1,430 @@
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+  /* HSL color mode */
+  --hue-color: 224;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 0.938rem;
+  /*===== Margenes =====*/
+  --mb-4: 2rem;
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== BASE =====*/
+body {
+  margin-top: var(
+    --header-height
+  ); /* Ensure content starts below fixed header */
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--mb-4);
+  margin-right: var(--mb-4);
+}
+
+.l-header {
+  /* Targeting the correct class now */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+
+.nav__link {
+  position: relative;
+  color: #fff;
+}
+
+.nav__link:hover {
+  position: relative;
+}
+
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+.nav__logo {
+  color: var(--second-color);
+}
+
+.nav__toggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin-top: 0; /* Reset body margin for larger screens */
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-4);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    color: var(--second-color);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ------ HERO SECTION ------ */
+
+.hero-section {
+  height: calc(100vh - var(--header-height));
+  min-height: 400px;
+  display: flex; /* Enable flexbox for vertical centering */
+  flex-direction: column; /* Stack the heading and paragraph vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  text-align: center; /* Fallback for older browsers or simpler centering */
+  margin-bottom: 10rem; /* Keep existing margin */
+}
+
+.hero-heading {
+  margin-bottom: 1rem;
+  font-size: var(--text-h1); /* Base style for h1 */
+  font-weight: bold;
+}
+
+.hero-paragraph {
+  margin-bottom: 5rem;
+  font-size: var(--text-paragraph); /* Base style for paragraph */
+  max-width: 80%; /* Optional: Limit the width of the paragraph for better readability */
+}
+
+.hero-btn-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-heading-break {
+  display: none; /* Hide on larger screens */
+}
+
+/* ----------------------- MEDIA QUERIES ----------------------- */
+
+@media (max-width: 600px) {
+  .hero-heading {
+    font-size: var(--text-h2); /* Adjust h1 size for smaller screens */
+  }
+
+  .hero-paragraph {
+    font-size: var(
+      --text-paragraph
+    ); /* Paragraph size remains the same or can be adjusted */
+    max-width: 90%; /* Adjust max-width for smaller screens */
+  }
+
+  .hero-btn-container {
+    flex-direction: column;
+  }
+
+  .hero-heading-break {
+    display: block; /* Show on smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: var(
+      --text-h3
+    ); /* Further adjust h1 size for even smaller screens */
+  }
+
+  .hero-paragraph {
+    font-size: var(
+      --text-base
+    ); /* Adjust paragraph size for even smaller screens */
+  }
+}
+
+/* ABOUT SECTION */
+.about {
+  padding-top: 4rem; /* Add some top padding to the about section */
+  padding-bottom: 4rem; /* Add some bottom padding as well */
+}
+
+.section-title {
+  font-size: var(
+    --h2-font-size
+  ); /* You might need to add this variable in your :root */
+  color: var(--first-color);
+  text-align: center;
+  margin-bottom: 2rem; /* Adjust margin as needed */
+}
+
+.about-text {
+  line-height: 1.6;
+}
+
+.highlight {
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.highlight-secondary {
+  background-color: #1c7ed6;
+}
+
+/* "HIRE US" LINK STYLES */
+.nav__list {
+  display: flex; /* Ensure items are in a row */
+  align-items: center; /* Vertically align items */
+}
+
+.nav__link[href="#hire-us"] {
+  /* Target the "Hire Us" link specifically */
+  background-color: var(
+    --first-color
+  ); /* Use your primary color for the background */
+  color: #fff; /* White text color */
+  padding: 0.75rem 1.5rem; /* Add some padding to make it look like a button */
+  border-radius: 0.3rem; /* Add a slight border radius */
+  font-weight: var(--font-semi); /* Make it semi-bold to stand out */
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+  margin-left: 1rem; /* Add some left margin to separate it */
+}
+
+.nav__link[href="#hire-us"]:hover {
+  background-color: hsl(
+    var(--hue-color),
+    89%,
+    70%
+  ); /* Slightly lighter shade on hover */
+  color: #fff; /* Keep text white on hover */
+}
+
+/* Remove the default underline effect on hover for this specific link */
+.nav__link[href="#hire-us"]:hover::after {
+  display: none;
+}
+
+/* Style for the "Hire Us" link to make it blue */
+.nav__link[href="form.html"] {
+  background-color: var(--first-color); /* Use your primary blue color */
+  color: #fff; /* White text for better contrast on blue */
+  padding: 0.75rem 1.5rem; /* Add some padding to make it look like a button */
+  border-radius: 0.3rem; /* Add a slight border radius */
+  font-weight: var(--font-semi); /* Make it semi-bold to stand out */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  margin-left: 1rem; /* Add some space from the other links */
+}
+
+.nav__link[href="form.html"]:hover {
+  background-color: hsl(
+    var(--hue-color),
+    89%,
+    70%
+  ); /* Slightly lighter blue on hover */
+  color: #fff; /* Keep text white on hover */
+}
+
+/* Remove the default underline on hover for this specific link */
+.nav__link[href="form.html"]:hover::after {
+  display: none;
+}
+
+/* ===== ADDED CSS FOR INTERACTIVE ELEMENTS ===== */
+
+/* Button that changes text */
+#changeTextButton {
+  background: none;
+  color: var(--second-color); /* Using your secondary text color */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#changeTextButton:hover {
+  color: var(--first-color); /* Change color on hover */
+}
+
+/* Image Gallery / Slideshow */
+.image-gallery {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-image.active {
+  opacity: 1;
+}
+
+.gallery-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+/* Hover Effect on Work Items */
+.work-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-item::before {
+  content: attr(data-hover-text); /* Display the data-hover-text attribute */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  pointer-events: none; /* Allow clicks on the link */
+}
+
+.work-item:hover::before {
+  opacity: 1;
+}
+
+/* Form Validation Feedback */
+.form-feedback {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.875rem;
+}
+
+.form-feedback.success {
+  color: green;
+}
+
+/* Long Press Effect */
+.about.long-pressed {
+  background-color: #f0f0f0; /* Example visual feedback */
+  transition: background-color 0.5s ease-in-out;
+}
